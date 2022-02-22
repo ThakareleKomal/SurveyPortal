@@ -1,0 +1,18 @@
+input.ng-invalid.ng-touched{
+    border-color: red;
+    color: red;
+}
+label{
+   font-weight: bold; 
+   color: rgb(51, 2, 2);
+   font-size: large;
+}
+#username{
+    color: white;
+}
+#firstname{
+    color: white;
+}
+#lastname{
+    color: white;
+}

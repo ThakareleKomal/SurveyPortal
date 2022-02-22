@@ -1,0 +1,66 @@
+<div class="container" style="max-width:600px;background-color:white;">
+    <h2 class="textual">Surveyor Registration</h2>
+    <form #Registerform="ngForm" (ngSubmit)="registerUser()">
+        <!--<small [class.text-danger]="msg.status==500">{{msg.message}}</small>-->
+        <small [class.text-danger]>{{msg}}</small>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" placeholder="Enter email" name="email" [(ngModel)]="user.emailId" required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" 
+            #email="ngModel"
+            [class.is-invalid]="email.invalid && email.touched"
+            >
+            <div *ngIf="email.invalid &&(email.touched||email.dirty)" id="email" class="alert alert-danger">Email Id is required</div>
+        </div>
+    
+        <div class ="form-group">
+            <label for="pwd">UserName:</label>
+            <input type="UserName" for="UserName" class="form-control"  placeholder="Enter UserName" name="Username" [(ngModel)]="user.userName" required #UserName="ngModel"
+            [class.is-invalid]="FirstName.invalid && FirstName.touched"
+            >
+            <div *ngIf="UserName.invalid &&(UserName.touched||UserName.dirty)" id="email" class="alert alert-danger">UserName is required</div> 
+       </div>
+    
+
+        <div class ="form-group">
+            <label for="pwd">FirstName:</label>
+            <input type="FirstName" for="FirstName" class="form-control"  placeholder="Enter FirstName" name="Firstname" [(ngModel)]="user.firstName" required #FirstName="ngModel"
+            [class.is-invalid]="FirstName.invalid && FirstName.touched"
+            >
+            <div *ngIf="FirstName.invalid &&(FirstName.touched||FirstName.dirty)" id="email" class="alert alert-danger">FirstName is required</div> 
+       </div>
+    
+       <div class ="form-group">
+        <label for="pwd">LastName:</label>
+        <input type="LastName" for="LastName" class="form-control"  placeholder="Enter LastName" name="Lastname" [(ngModel)]="user.lastName" required #lastName="ngModel"
+        [class.is-invalid]="lastName.invalid && lastName.touched"
+        >
+        <div *ngIf="lastName.invalid &&(lastName.touched||lastName.dirty)" id="email" class="alert alert-danger">lastName is required</div>
+    </div>
+    
+        <div class="form-group">
+            <label for="pwd">password:</label>
+            <input type="password" class="form-control" placeholder="Enter password" name="password" [(ngModel)]="user.password" #password="ngModel" required 
+            [class.is-invalid]="password.invalid && password.touched"
+            >
+            <div *ngIf="password.invalid &&(password.touched||password.dirty)" id="email" class="alert alert-danger">password is required</div>
+        </div>
+    
+        <div class="form-group">
+            <label for="pwd">Confirm password:</label>
+            <input type="password" class="form-control" placeholder="Enter confirm password" name="cpassword" #cpassword="ngModel" (ngModel)="user.password"  required 
+            [class.is-invalid]="password.invalid && password.touched"
+            >
+            <small class="text-danger" [class.d-none]="(cpassword.value == password.value)||cpassword.untouched">Password & confirm is required</small>
+    
+        </div>
+        <button [disabled]="Registerform.form.invalid" type="submit" class="btn btn-info">Register</button>
+        
+        <samll class="float-right btextual" [routerLink]="['/Surveyorlogin']">Existing user ? Login here</samll>
+    
+    
+    <br>
+    
+    </form>
+    </div>
+    <br><br><br><br><br><br><br>
+
