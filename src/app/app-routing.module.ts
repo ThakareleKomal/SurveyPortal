@@ -55,10 +55,10 @@ const routes: Routes = [
 { path:'loginsuccess',component:SurveyorLoginSuccessComponent},
 { path:'Surveyorregister',component:SurveyorRegistrationComponent},
 { path:'Surveyorlogin',component:SurveyorLoginComponent},
-{path: 'surveyorhome', component:SurveyorHomeComponent},
-{path :'listuser', component:ListUserComponent},
-{path :'submit', component: ParticipantFeedbackComponent},
-{path:'list', component:ListOfSurveysComponent}
+{ path: 'surveyorhome', component:SurveyorHomeComponent},
+{ path :'listuser', component:ListUserComponent},
+{ path :'submit', component: ParticipantFeedbackComponent},
+{ path:'list', component:ListOfSurveysComponent}
 
 
 
